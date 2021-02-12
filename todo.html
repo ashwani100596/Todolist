@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My TODO</title>
+    <link rel="stylesheet" href="todo.css">
+</head>
+<body>
+    <div>
+        <h1>My Todo</h1>
+        
+            <input type="text" placeholder="Add task" id="inputText" >
+            <button onclick="generateList()" id="addToDo">Add</button>
+       
+        <ul>
+                <div id="toDocontainer">
+
+                </div>
+        </ul>
+   
+    </div>
+    <script>
+        const addToDoButton = document.getElementById('addToDo');
+        const toDoContainer = document.getElementById('toDocontainer');
+        const inputField =  document.getElementById('inputText');
+
+addToDoButton.addEventListener('click', function(){
+    let paragraph = document.createElement('li');
+    paragraph.innerText = inputField.value;
+    toDoContainer.appendChild(paragraph);
+});
+
+
+function generateList(){
+    
+    document.getElementById("textfield1").value="";
+          console.log("hello");
+}
+        
+    </script>
+</body>
+</html>
