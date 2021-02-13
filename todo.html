@@ -28,15 +28,21 @@
 
 addToDoButton.addEventListener('click', function(){
     let paragraph = document.createElement('li');
+    let editbutton = document.createElement('Button');
+    let deletebtn = document.createElement('Button');
+    editbutton.setAttribute('type','submit');
+    deletebtn.setAttribute('type','reset');
+    editbutton.innerHTML = "Edit";
+    deletebtn.innerHTML = "Delete";
+    document.body.appendChild(editbutton);
+    document.body.appendChild(deletebtn);
     paragraph.innerText = inputField.value;
+    inputField.value = '';
     toDoContainer.appendChild(paragraph);
 });
 
-
 function generateList(){
-    
-    document.getElementById("textfield1").value="";
-          console.log("hello");
+    // inputField.value = ' ';
 }
         
     </script>
