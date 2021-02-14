@@ -12,22 +12,36 @@
         <h1>My Todo</h1>
         
             <input type="text" placeholder="Add task" id="inputText" >
-            <button onclick="generateList()" id="addToDo">Add</button>
+            <button id="addToDobtn">Add</button>
        
         <ul>
-                <div id="toDocontainer">
-
+                <div id="toDoContainer">
+                    <!-- <li class="checked" style="text-decoration: line-through;">milk</li> -->
                 </div>
         </ul>
    
     </div>
     <script>
-        const addToDoButton = document.getElementById('addToDo');
-        const toDoContainer = document.getElementById('toDocontainer');
-        const inputField =  document.getElementById('inputText');
-
+        var inputField =  document.getElementById('inputText');
+        var addToDoButton = document.getElementById('addToDobtn');
+        var toDoContainerData = document.getElementById('toDoContainer')
+        
+        toDoContainerData.addEventListener('click', function(){
+            toDoContainerData.style["text-decoration"] = "line-through";
+            console.log("hello world");
+        }) 
+            
 addToDoButton.addEventListener('click', function(){
-    let paragraph = document.createElement('li');
+
+    if (inputField.value ==='' ) {
+        alert("You must write something!")
+    
+} else {
+    let list = document.createElement('li');
+    
+    list.innerText = inputField.value;
+    inputField.value = '';
+    toDoContainer.appendChild(list);
     let editbutton = document.createElement('Button');
     let deletebtn = document.createElement('Button');
     editbutton.setAttribute('type','submit');
@@ -36,14 +50,31 @@ addToDoButton.addEventListener('click', function(){
     deletebtn.innerHTML = "Delete";
     document.body.appendChild(editbutton);
     document.body.appendChild(deletebtn);
-    paragraph.innerText = inputField.value;
-    inputField.value = '';
-    toDoContainer.appendChild(paragraph);
-});
+         
+        }
+        
+    
+        // Add a "checked" symbol when clicking on a list item
+var taskList = document.querySelector('ul');
+taskList.addEventListener('click', function(ev) {
+  if (ev.target.id === 'toDoContainer') {
+    ev.target.classList.toggle('checked');
+  }
+}, false);
 
-function generateList(){
-    // inputField.value = ' ';
-}
+        
+
+    // 
+//     editbutton.onclick = function() {
+//   EditData(this.value);
+// };
+});
+       
+
+
+// function generateList(){
+//     // inputField.value = ' ';
+// }
         
     </script>
 </body>
