@@ -29,3 +29,14 @@ li:hover{
 	color:red;
 } 
 
+.input{
+	margin: auto;
+	text-align: center;
+}
+
+li.checked {
+	background: #888;
+	color: #fff;
+	text-decoration: line-through;
+  }
+
